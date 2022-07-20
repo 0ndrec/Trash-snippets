@@ -11,8 +11,8 @@ with open(targetlist, 'r') as f:
         oldstring = line.strip()
         newstring = oldstring.replace("target_string", "replacement_string")
 
-    #Call subprocess to rename the file
-    subprocess.run("mv " + "~" + oldstring + " " + "~" + newstring, shell=True)
+        #Call subprocess to rename the file
+        subprocess.run("mv " + "~" + oldstring + " " + "~" + newstring, shell=True)
 
 #Close the file
 f.close()
