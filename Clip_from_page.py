@@ -14,6 +14,12 @@ count_of_frames = argparse.add_argument(
 screenshot_pause = argparse.add_argument(
     "--pause", help="Frequency of screenshots", type=float, default=0.1)
 
+firefox_driver_source = "https://github.com/mozilla/geckodriver/releases/latest"
+
+# Found GeckoDriver.exe in working directory. If not found, download it from firefox_driver_source
+if not os.path.isfile("geckodriver.exe"):
+    print("You need to download geckodriver.exe from " + firefox_driver_source)
+    sys.exit()
 
 # Create a new instance of the Firefox driver
 gecko_options = webdriver.FirefoxOptions()
